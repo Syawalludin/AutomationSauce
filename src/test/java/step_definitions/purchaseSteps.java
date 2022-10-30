@@ -68,14 +68,20 @@ public class purchaseSteps {
         PageInventory.setContinue();
     }
 
-    @Then("User check price \"(.*)\"")
-    public void pricecheck(String Expected) throws InterruptedException {
+    @Then("User check on item total \"(.*)\" and Tax price \"(.*)\" and total price \"(.*)\"")
+    public void pricecheck(String ExpectedI, String ExpectedT, String Expectedt) throws InterruptedException {
         pageInventory PageInventory = new pageInventory(webDriver);
-        String A = PageInventory.setCheckprice();
-        Assert.assertEquals(A, Expected);
+        String Item = PageInventory.setSubtotal();
+        Assert.assertEquals(Item, ExpectedI);
+
+        String Tax = PageInventory.setTax();
+        Assert.assertEquals(Tax, ExpectedT);
+
+        String total = PageInventory.setCheckprice();
+        Assert.assertEquals(total, Expectedt);
     }
 
-    @Then("Finish")
+    @And("User click button Finish for and transaktion")
     public void clikFinish() throws InterruptedException {
         pageInventory PageInventory = new pageInventory(webDriver);
         PageInventory.setFinish();

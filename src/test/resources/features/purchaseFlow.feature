@@ -13,6 +13,6 @@
     And User click button checkout
     Then User input persoal data startting from first name "Syawal" and user input last name "Ludin" and user input postal code "Syawal123"
     And User click button continue
-    Then User check price "$25.90"
-    Then Finish
+    Then User check on item total "$15.99" and Tax price "$1.28" and total price "$17.27"
+    And User click button Finish for and transaktion
     Then User seeing text "THANK YOU FOR YOUR ORDER" for the and order

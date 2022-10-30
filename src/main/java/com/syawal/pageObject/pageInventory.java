@@ -50,6 +50,12 @@ public class pageInventory {
     @FindBy(xpath = "//div[@class='summary_total_label']")
     private WebElement checkprice;
 
+    @FindBy(xpath = "//div[@class='summary_subtotal_label']")
+    private WebElement subtotal;
+
+    @FindBy(xpath = "//div[@class='summary_tax_label']")
+    private WebElement Tax;
+
     @FindBy(xpath = "//button[@id='finish']")
     private WebElement finish;
 
@@ -97,10 +103,21 @@ public class pageInventory {
         Continue.click();
     }
 
+    public String setSubtotal(){
+        subtotal.getText();
+        return "$15.99";
+    }
+
+    public String setTax(){
+        Tax.getText();
+        return "$1.28";
+    }
+
     public String setCheckprice(){
         checkprice.getText();
-        return "$25.90";
+        return "$17.27";
     }
+
 
     public void setFinish(){
         finish.click();
