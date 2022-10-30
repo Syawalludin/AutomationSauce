@@ -32,12 +32,14 @@ public class purchaseSteps {
         pageInventory PageInventory = new pageInventory(webDriver);
         PageInventory.clickproduct2();
         PageInventory.clickProduct();
+        Thread.sleep(3000);
     }
 
     @And("User click open cart for seeing the product that has been selected")
     public void cartopen() throws InterruptedException {
         pageInventory PageInventory = new pageInventory(webDriver);
         PageInventory.opencart();
+        Thread.sleep(3000);
     }
 
     @And("User clik removing button for removing item for cart")
@@ -52,6 +54,7 @@ public class purchaseSteps {
     public void selectcheckout() throws InterruptedException {
         pageInventory PageInventory = new pageInventory(webDriver);
         PageInventory.setCheckout();
+        Thread.sleep(3000);
     }
 
     @Then("User input persoal data startting from first name \"(.*)\" and user input last name \"(.*)\" and user input postal code \"(.*)\"")
@@ -60,12 +63,14 @@ public class purchaseSteps {
         PageInventory.setUserName(Fname);
         PageInventory.setLastName(Lname);
         PageInventory.setPostalCode(Pcode);
+        Thread.sleep(3000);
     }
 
     @Then("User click button continue")
     public void clickcontinue() throws InterruptedException {
         pageInventory PageInventory = new pageInventory(webDriver);
         PageInventory.setContinue();
+        Thread.sleep(3000);
     }
 
     @Then("User check on item total \"(.*)\" and Tax price \"(.*)\" and total price \"(.*)\"")
@@ -79,12 +84,14 @@ public class purchaseSteps {
 
         String total = PageInventory.setCheckprice();
         Assert.assertEquals(total, Expectedt);
+        Thread.sleep(3000);
     }
 
     @And("User click button Finish for and transaktion")
     public void clikFinish() throws InterruptedException {
         pageInventory PageInventory = new pageInventory(webDriver);
         PageInventory.setFinish();
+        Thread.sleep(3000);
     }
 
     @Then("User seeing text \"(.*)\" for the and order")
